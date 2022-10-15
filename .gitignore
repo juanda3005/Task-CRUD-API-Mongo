@@ -1,0 +1,8 @@
+#enviromental vairables
+.env
+.install.txt
+
+#node
+node_modules
+dist
+.request

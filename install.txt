@@ -1,0 +1,125 @@
+node init --yes
+npm i express mongoose
+npm i morgan
+
+babel
+
+pasa codigo nuevo a codigo viejo para que lo interpreten los navegadores
+(por ejemplo para usar import y export)
+
+npm i @babel/core @babel/cli @babel/node @babel/preset-env -D
+
+npm i -D @babel/plugin-transform-runtime
+
+
+npx babel-node src/index.js
+para ejecutar la api
+
+Poner en el script de package.json
+
+"start": "babel-node ./src/index.js"
+
+ahora se puede ejecutar con:
+npm start
+
+
+Para usar nodemon junto con node-babel:
+"start": "nodemon ./src/index.js --exec babel-node"
+
+ejecuto con:
+npm start
+
+
+VARIABLE DE ENTORNO
+
+Se usa para no tipear texto en el codigo, 
+
+Es una variable dentro del sisema que almacena un texto, el programador sabe que tiene esa variable pero el resto no, util para ocultar direcciones o demas textos que no queremos que sean visibles
+
+Instalo el modulo:
+npm i dotenv
+
+//La variable de entorno se crea en todo el computador
+
+//Creo un gitignore para no subir esos archivos a git hub
+
+Para ctualiar las vairables de entorno se debe cargar el proyecto y volver a iniciar
+
+
+//PARA PROBAR LAS PETICIONES
+
+POSTMAN EN VS USO LA EXTENCIÓN REST client
+
+creo una carpeta en el directorio primario
+la llamo "request" pero puedo ponerle otro nombre
+
+creo un archivo con una extension http ej task.http
+
+pongo el metodo y la url:
+GET http://localhost:4000/api/tasks
+y le doy en send request que sale justo arriba del etodo y la url, a la derecha me aprece una vemtana con el resultado o respuesta de la petición
+
+
+cors:no permite que se hagan configuraciones/peticiones desde otro servidor, para permitirlo se instala:
+
+npm i cors
+
+
+//Buscar modulo api docs para documentar
+
+//Paro no tener que usar siempre try catch 
+en el codigo, especialmente en los controladores
+
+express promise router
+
+//Para validar (Ejemplo: que haya un titulo o una descripción)
+
+express validator
+joi validator (es el mas usado)
+
+
+//Para realizar la paginación
+
+Mongoose paginate
+npm install mongoose-paginate-v2
+
+
+//Se crea en el package json el archivo para generar el codigo para producción
+y que no dependa de babel
+
+Instalar
+npm i -D @babel/plugin-transform-runtime
+
+Agrego esto en los scripts
+"build":"babel src --out-dir dist"
+
+//Añadir en babelrc:
+ "plugins": [
+        "@babel/plugin-transform-runtime"
+    ]
+
+
+  "dev": "nodemon ./src/index.js --exec babel-node",
+  npm run dev
+    Dev para ejecutar en desarrollo
+
+    "start": "node dist/index.js",
+    start para ejecutar en producción
+    npm start
+
+    "build":"babel src --out-dir dist"
+    npm run build
+    build para iniciar el enorno de producción
+
+
+//Subir proyecto a clouding.io
+git init
+
+//Añadir en gitignore
+node_modules
+dist
+
+ya que al ejecutar npm install se genera el node node_modulesy al ejecutar npm run build se genera el dist, asi que no es necesario subir esos archivos a git hub
+
+
+

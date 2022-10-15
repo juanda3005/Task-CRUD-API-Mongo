@@ -1,0 +1,33 @@
+GET http://localhost:4000/api/tasks
+###
+GET http://localhost:4000/api/tasks/6342216fd7868fcde79f874e
+
+###
+GET http://localhost:4000/api/tasks?size=5&page=2
+###
+GET http://localhost:4000/api/tasks/done
+
+###
+POST http://localhost:4000/api/tasks
+Content-Type: application/json
+
+{
+    "title":"validacion express ",
+    "description": "Trabajo empresa",
+    "done": true
+}
+###
+DELETE http://localhost:4000/api/tasks/634221dcca3eb4ae29c0ab94
+
+###
+PUT http://localhost:4000/api/tasks/6342216fd7868fcde79f874e
+Content-Type: application/json
+
+{
+    "title": "Vue project 34",
+    "description": "application portafolio",
+    "done": true
+}
+
+
+
